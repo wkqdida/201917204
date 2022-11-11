@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang=zh-cmn-Hans>
+	<head>
+		<meta charset="utf-8">
+		<title>小赵的表单页面</title>
+		<link rel="stylesheet" id="templatecss" type="text/css" href="CSS小赵的表单.css">
+	</head>
+	<body>
+		<header class="center">
+			<!--div class="top_left"><td><img style="width: 3px; height: 5=px; padding: 0px 0px;" src="70years.jpg" name="picautozoom" width="10" border="0" height="10"></td></div-->
+			<div class="top_right"><b>70周年</b> </div>
+		</header>
+		<div class="top">
+			<!--a href="#"><div class="top_middle"><img src="logo1.png" ></div></a-->
+			<ul>
+				<li><a href="小赵的网页.html">返回首页</a></li>
+				<li><a href="#">校园风采</a>
+				<ul>
+					<li><a href="华水历史.html">70年风貌</a></li>
+					<li><a href="北京时期.html">北京时期</a></li>
+					<li><a href="岳城时期.html">岳城时期</a></li> 
+					<li><a href="邯郸时期.html">邯郸时期</a></li>
+				</ul>
+				</li>
+				<li><a href="#">校庆活动</a>
+				<ul>
+					<li><a href="小赵的表单.html">校庆留言</a></li>
+				</ul>
+				</li>
+				<li><a href="#">校园历史</a></li>
+				<li><a class="active" href="#">关于校庆</a>
+				<ul>
+					<li><a href="#">校庆Logo</a></li>
+				</ul>
+				</li>
+			</ul>
+		</div>
+		<!--div class="tit">
+			<p><a href="http://127.0.0.1:8848/%E8%84%9A%E6%9C%AC%E7%BC%96%E7%A8%8B/%E5%B0%8F%E8%B5%B5%E7%9A%84%E7%BD%91%E9%A1%B5.html">返回校庆首页</a></p>
+		</div-->
+		<form action="" method="post" class="xzhao_Form">
+			<h1>校庆留言板
+			<br>
+			<span>快来留下你对母校的祝福吧~</span>
+			</h1>
+			<label>
+				<span>姓名：</span>
+				<input id="name" type="text" name="name" placeholder="输入你的姓名" size="20"/>
+			</label>
+			
+			<label>
+				<span>性别：</span>
+				<input type="radio" name="sex" value="male" checked>男
+				<br>
+				<input type="radio" name="sex" value="female">女
+			</label>
+			
+			<label>
+				<span>学院：</span>
+				<select id="academy" name="academy" onchange="TheFormStyle();">
+					 <option value="信息工程学院">信息工程学院</option>
+					 <option value="水利学院">水利学院</option>
+					 <option value="测绘与地理信息学院">测绘与地理信息学院</option>
+					 <option value="地球科学与工程学院">地球科学与工程学院</option>
+					 <option value="电力学院">电力学院</option>
+					 <option value="机械学院">机械学院</option>
+					 <option value="环境与市政工程学院">环境与市政工程学院</option>
+					 <option value="水资源学院">水资源学院</option>
+					 <option value="管理与经济学院">管理与经济学院</option>
+					 <option value="数学与统计学院">数学与统计学院</option>
+					 <option value="建筑学院">建筑学院</option>
+					 <option value="物理与电子学院">物理与电子学院</option>
+					 <option value="外国语学院">外国语学院</option>
+					 <option value="法学院">法学院</option>
+					 <option value="公共管理学院">公共管理学院</option>
+					 <option value="国际教育学院">国际教育学院</option>
+					 <option value="马克思主义学院">马克思主义学院</option>
+					 <option value="乌拉尔学院">乌拉尔学院</option>
+					 <option value="艺术与设计学院">艺术与设计学院</option>
+				</select>
+			</label>
+
+			<label>
+				<span>留言：</span>
+				<textarea id="message" name="message" placeholder="留下信息"></textarea>
+			</label>
+			
+			<label>
+				<span>&nbsp;</span>
+				<input type="button" class="button" value="提交"/>
+			</label>
+		</form>
+		<script>
+		function TheFormStyle(){
+			var template=document.getElementById("template");
+			var index=template.selectedIndex;
+			var templatevalue=template.options[index].value;
+			var templatecss = document.getElementById("templatecss");
+			templatecss.setAttribute("href","css/" + templatevalue + ".css");
+			document.getElementsByTagName("form")[0].setAttribute("class",templatevalue);
+			}
+		</script>
+	</body>
+</html>
